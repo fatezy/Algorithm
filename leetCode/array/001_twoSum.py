@@ -24,9 +24,9 @@ class Solution(object):
             if target - val in hash_map:
                 ind2 = hash_map[target - val]
                 if ind1 != ind2:
-                    return ind1 + 1, ind2 + 1
+                    return ind1 , ind2
 
 
 if __name__ == "__main__":
-    print( Solution().twoSum([3, 2, 4], 6))
+    print( Solution().twoSum([2,7,11,15], 9))
 

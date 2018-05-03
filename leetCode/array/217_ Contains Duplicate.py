@@ -16,3 +16,14 @@ class Solution(object):
                 map[nums[i]] = 1
 
         return False
+
+
+    def  containsDuplicate2(self, A):
+         map = {}
+         for i,val in enumerate(A):
+             if A[i] in map:
+                 return True
+             else:
+                 map[A[i]] = 1
+
+         return False

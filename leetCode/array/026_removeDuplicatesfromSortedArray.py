@@ -38,7 +38,7 @@ class Solution(object):
 
 if __name__ == '__main__':
     A = Solution()
-    print(A.removeDuplicates2([1,1,3]))
+    print(A.removeDuplicates([1,1,3]))
 
 
 
