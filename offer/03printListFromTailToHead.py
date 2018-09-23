@@ -21,14 +21,26 @@ class Solution:
         while  listNode.next is not None:
             result.extend([listNode.val])
             listNode = listNode.next
-        result.extend([listNode.val])
+        result.extend([listNode.val])   # 当初为什么这么写
         return result[::-1]
+
+    def printListFromTailToHead2(self,listNode):
+        res = []
+        if not listNode:
+            return res
+        while listNode is not None:
+            res.append(listNode.val)
+            listNode = listNode.next
+        return res[::-1]
+
+
+
 
 if __name__ == '__main__':
     node = ListNode(1)
     node.next = ListNode(2)
     node.next.next = ListNode(3)
-    print(Solution().printListFromTailToHead(node))
+    print(Solution().printListFromTailToHead2(node))
 
 
 
