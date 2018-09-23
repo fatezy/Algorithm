@@ -10,5 +10,9 @@ class Solution:
         return s.replace(' ','%20')
 
 
+    def replaceSpace2(self,s):
+        if not s:
+            return ""
+        return s.replace('','%20')
 if __name__ == '__main__':
     print(Solution().replaceSpace('he he'))
