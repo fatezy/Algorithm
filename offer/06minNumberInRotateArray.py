@@ -9,5 +9,11 @@ class Solution:
            return 0
        return min(rotateArray)
 
+    def minNumberInRotateArray2(self, rotateArray):
+        if not rotateArray:
+            return 0
+        return min(rotateArray)
+
+
 if __name__ == '__main__':
     print('ok')
