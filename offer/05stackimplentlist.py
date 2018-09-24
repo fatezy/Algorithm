@@ -20,3 +20,38 @@ class Solution:
                 self.stackB.append(self.stackA.pop())
             return self.stackB.pop()
 
+    def push2(self, node):
+        self.stackA.append(node)
+
+    def pop2(self):
+        if self.stackB:
+            return self.stackB.pop()
+
+        elif not self.stackA:
+            return None
+        else:
+            while self.stackA:
+                self.stackB.append(self.stackA.pop())
+
+        return self.stackB.pop()
+
+
+if __name__ == '__main__':
+    test = Solution()
+
+    test.push2(1)
+    test.push2(2)
+    test.push2(3)
+
+    print(test.pop2())
+    print(test.pop2())
+
+    test.push2(4)
+
+    print(test.pop2())
+
+    test.push2(5)
+
+    print(test.pop2())
+    print(test.pop2())
+
