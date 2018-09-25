@@ -14,3 +14,15 @@ class Solution:
             a, b = b, a + b
             count += 1
         return b
+
+    def jumpFloor3(self,number):
+        count,a,b = 0,0,1
+
+        while count < number:
+            count = count + 1
+            a ,b = b,a+b
+        return b
+
+
+if __name__ == '__main__':
+    print(Solution().jumpFloor3(5))
