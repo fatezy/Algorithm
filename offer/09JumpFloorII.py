@@ -8,3 +8,10 @@ class Solution:
         if number is 1:
             return 1
         return 2*self.jumpFloorII(number-1)
+
+    def jumpFloorII2(self,number):
+        if not number:
+            return 0
+        if number is 1:
+            return 1
+        return 2*self.jumpFloorII2(number-1)

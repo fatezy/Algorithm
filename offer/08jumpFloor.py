@@ -20,9 +20,19 @@ class Solution:
 
         while count < number:
             count = count + 1
-            a ,b = b,a+b
+            # a ,b = b,a+b
+            temp = a
+            a = b
+            b = temp + b
+
         return b
 
 
 if __name__ == '__main__':
     print(Solution().jumpFloor3(5))
+    # a = 1
+    # b = 1
+    # a = b
+    # b = a + b
+    # print(b)
+    # print(a)
