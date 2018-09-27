@@ -8,4 +8,20 @@ class Solution:
             return 1
         if number is 2:
             return 2
-        return self.rectCover(number-1)+self.rectCover(number-2)
+        return self.rectCover(number - 1) + self.rectCover(number - 2)
+
+    def rectCover2(self, number):
+        count, a, b = 0, 0, 1
+
+        if not number:
+            return 0
+
+        while count < number:
+            count += 1
+            a, b = b, a + b
+        return b
+
+
+if __name__ == '__main__':
+    print(Solution().rectCover2(2))
+
