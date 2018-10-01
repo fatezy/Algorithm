@@ -24,6 +24,6 @@ class Solution:
 
 if __name__ == '__main__':
     l = list(range(16))
-    print(l[8:0: -1])
+    print(l[-1])
 
 
