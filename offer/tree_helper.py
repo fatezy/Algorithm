@@ -23,9 +23,13 @@ class biTree:
                 return root
         return root
 
+
+    def creat(self):
+        return self.creatTree(None,0)
+
 if __name__ == '__main__':
     tree = biTree([1,2,3,'#',4,5])
-    root = tree.creatTree(None,0)
+    root = tree.creat()
     print(1)
 
 
