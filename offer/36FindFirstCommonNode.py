@@ -32,17 +32,6 @@ class Solution:
                 break
         return first
 
-    def FindFirstCommonNode2(self, pHead1, pHead2):
-
-        len1,len2,p1,p2 = 0,0,pHead1,pHead2
-        while p1:
-            p1 = p1.next
-            len1+=1
-
-        while p2:
-            p2 =p2.next
-            len2+=1
-
 
 
 
