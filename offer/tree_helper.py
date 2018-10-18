@@ -42,12 +42,12 @@ class biTree:
                 if flag:       # 是最后一层即结束
                     break
 
-                if node.left and node.left.val != -1:
+                if node.left:
                     next_queue.append(node.left)
                 if not node.left:
                     next_queue.append(TreeNode('#'))
 
-                if node.right and node.right.val != '#':
+                if node.right:
                     next_queue.append(node.right)
                 if not node.right:
                     next_queue.append(TreeNode('#'))
