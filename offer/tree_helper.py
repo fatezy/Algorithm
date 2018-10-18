@@ -31,15 +31,29 @@ class biTree:
         results = []
         while queue:
             next_queue = []
-            results.extend([node.val for node in queue])
+            results.append([node.val for node in queue])
             for node in queue:
-                if node.left:
-                    next_queue.append(node.left)
 
-                if node.right:
+                # 加一层检验是否为最后一层
+                flag = True   # 为True时，不是最后一层
+                for node2 in queue:
+                    if node2.left or node2.right:
+                        flag = False
+                if flag:       # 是最后一层即结束
+                    break
+
+                if node.left and node.left.val != -1:
+                    next_queue.append(node.left)
+                if not node.left:
+                    next_queue.append(TreeNode('#'))
+
+                if node.right and node.right.val != '#':
                     next_queue.append(node.right)
+                if not node.right:
+                    next_queue.append(TreeNode('#'))
 
             queue = next_queue
+
         return results
 
 
