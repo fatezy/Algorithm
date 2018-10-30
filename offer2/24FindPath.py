@@ -11,19 +11,19 @@ class Solution:
     # 返回二维列表，内部每个列表表示找到的路径
     def FindPath(self, root, expectNumber):
 
-        if  not root and expectNumber == 0:
+        if  not root and expectNumber == 0:         # 到了叶子节点的字节，判断是否并入res
             if self.temp:
                 self.res.append(self.temp.copy())
 
         if root:
             self.temp.append(root.val)
             self.FindPath(root.left,expectNumber-root.val)
-            self.temp.pop()
+            self.temp.pop()                         # 回退到父节点
 
         if root:
             self.temp.append(root.val)
             self.FindPath(root.right,expectNumber-root.val)
-            self.temp.pop()
+            self.temp.pop()                        # 回退到父节点
 
         return self.res[::2]
 
