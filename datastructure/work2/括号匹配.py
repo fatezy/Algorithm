@@ -18,7 +18,15 @@ class Solution:
         return True if not brackets_stack else False
 
 
-if __name__ == '__main__':
-    print(Solution().check('([]())'))
 
-    print(Solution().check('((('))
+
+if __name__ == '__main__':
+    # print(Solution().check('([]())'))
+    #
+    # print(Solution().check('((('))
+
+    while True:
+        val = input('请输入待检验的括号')
+        if val == '#':
+            break
+        print(Solution().check(val))
