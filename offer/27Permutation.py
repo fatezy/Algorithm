@@ -1,14 +1,14 @@
 # 输入一个字符串,按字典序打印出该字符串中字符的所有排列。例如输入字符串abc,
 # 则打印出由字符a,b,c所能排列出来的所有字符串abc,acb,bac,bca,cab和cba。
 
-#全排列问题
+#全排列问题 这个递归有些复杂
 
 # -*- coding:utf-8 -*-
 class Solution:
     def Permutation(self, ss):
         if ss is None or len(ss) < 2:
             return ss
-        ss = list(ss)
+        ss = list(ss)                   # 转换成list
         res = set({})
         self.permut(ss, 0, res)
 
@@ -16,7 +16,7 @@ class Solution:
 
     def permut(self, ss, begin, res):
         if begin == len(ss) - 1:
-            res.add(''.join(ss))
+            res.add(''.join(ss))         # 以''作为分割符，将字符串连接起来
             return
 
         cur = begin
