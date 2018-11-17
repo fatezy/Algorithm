@@ -16,11 +16,8 @@ class Solution:
             count += 1
         return a
 
-    def Fibonacci3(self,n):
-        count,a,b = 0,0,1
-        while count < n:
-            count = count+1
-            a, b = b, a + b
+
+
 
 
 
