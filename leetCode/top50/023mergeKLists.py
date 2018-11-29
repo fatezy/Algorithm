@@ -38,13 +38,13 @@ class Solution:
             p = p.next
         return head.next
 
-    def mergeKLists(self, lists):
+    def mergeKLists2(self, lists):
         """
         :type lists: List[ListNode]
         :rtype: ListNode
         """
-        ListNode.__eq__ = lambda self, other: self.val == other.val
-        ListNode.__lt__ = lambda self, other: self.val < other.val
+        ListNode.__eq__ = lambda self, other: self.val == other.val   # 定义内置函数，是否相等，优先级相同时会调用
+        ListNode.__lt__ = lambda self, other: self.val < other.val   # 其实这个内置函数并不会使用到
 
         heap = []
         for arr in lists:
@@ -55,11 +55,11 @@ class Solution:
         dummy = ListNode(None)
         cur = dummy
         while heap:
-            value, popNode = heapq.heappop(heap)
+            value, popNode = heapq.heappop(heap) # pop出最小的
             cur.next = popNode
             cur = cur.next
             if popNode.next:
-                heapq.heappush(heap, (popNode.next.val, popNode.next))
+                heapq.heappush(heap, (popNode.next.val, popNode.next)) # push新的进去
         return dummy.next
 
 
@@ -69,4 +69,4 @@ if __name__ == '__main__':
     b = LinkList([1, 3, 5])
     c = LinkList([1, 2, 4])
     lists = [a.get_head(),b.get_head(),c.get_head()]
-    Solution().mergeKLists(lists)
+    Solution().mergeKLists2(lists)

@@ -65,7 +65,7 @@ class Solution:
         return ans
 
 if __name__ == '__main__':
-    print(Solution().longestPalindrome("babad"))
+    print(Solution().longestPalindrome2("babad"))
 
 
 
