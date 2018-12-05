@@ -28,12 +28,16 @@ class Solution:
                 res.append(temp_list[:])
             return
         for i in range(len(nums)):
-            if i not in index_list:
-                index_list.append(i)
-                temp_list.append(nums[i])
-                self.helper(res, temp_list, nums, i+1,index_list)
-                temp_list.pop()
-                index_list.pop()
+                if i not in index_list:
+                    index_list.append(i)
+                    temp_list.append(nums[i])
+                    self.helper(res, temp_list, nums, i+1,index_list)
+                    temp_list.pop()
+                    index_list.pop()
+
+
+
+
 
 
 if __name__ == '__main__':
