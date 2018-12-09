@@ -23,7 +23,7 @@ class Solution:
         self.helper(num,res,hour_list,minute_list,num,[],[],0,0)
         return res
 
-
+        # todo 执行不过
     def helper(self,num,res,hour_list,minute_list,remain,temp_h,temp_m,start_h,start_m):
         if len(temp_h)+len(temp_m) == num:
             h = sum(temp_h)
@@ -48,12 +48,12 @@ class Solution:
                 temp_h.pop()
                 remain += 1
 
-    def readBinaryWatch2(self, num):
+    def readBinaryWatch2(self, num):  # 暴力解法
         return ['%d:%02d' % (h, m)
                 for h in range(12) for m in range(60)
                 if (bin(h) + bin(m)).count('1') == num]
 
-    def readBinaryWatch3(self, n):
+    def readBinaryWatch3(self, n): # 回溯解法
 
         def dfs(n, hours, mins, idx):
             if hours >= 12 or mins > 59: return
