@@ -18,6 +18,9 @@
 class Solution:
     def isSymmetric(self, root):
         """判断二叉树是否为镜像二叉树，调用上题的是否为相同树的方法，中间的递归调用稍加修改即可
+
+        深度优先遍历解法
+
         :type root: TreeNode
         :rtype: bool
         """
