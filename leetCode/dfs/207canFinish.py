@@ -37,7 +37,7 @@ class Solution(object):
                 return False
             if visit[i] == 1:
                 return True
-            visit[i] = -1      # 代表是一个环,代表正在访问
+            visit[i] = -1      # 代表是一个环同时代表正在访问,也是回溯的思想，先将其设为-1
             for j in graph[i]:
                 if not dfs(j):
                     return False

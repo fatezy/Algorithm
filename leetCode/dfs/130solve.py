@@ -37,14 +37,6 @@ class Solution:
         if j<len(board[i])-1 and board[i][j+1] == 'O': #下
             self.dfs(board,i+1,j+1)
 
-
-
-
-
-
-
-
-
     def solve2(self, board):
         if not any(board): return
 

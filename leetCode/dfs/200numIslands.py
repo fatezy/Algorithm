@@ -22,6 +22,8 @@
 
 
 class Solution(object):
+    # 典型的深度搜索问题，类似于130题，每次深度搜索将可以搜索
+    # 到为1的全部重置为0，岛屿数加一
     def numIslands(self, grid):
         """
         :type grid: List[List[str]]
