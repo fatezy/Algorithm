@@ -20,7 +20,7 @@ class Solution:
         """
         kmp匹配算法，next长度与N相同，next[i]的值代表的含义是指match[i]位置的前缀子串和
         后续子串的最大匹配长度。
-        如： N = "abc1abc1",则最后一个字符即N[7]的前缀子串(不包括当前的字符)与后缀子串(不包含首字符)的最大匹配长度为3，即abc
+        如： N = "abc1abc1",则最后一个字符即N[7]的前缀子串(不包括match[0]与后缀子串(不包含match[i-1])的最大匹配长度为3，即abc
         1. 先生成next数组
         2. 对M,N利用next数组进行匹配
         :param M: 母串
@@ -35,7 +35,7 @@ class Solution:
             if M[mi] == N[ni]:
                 mi += 1
                 ni += 1
-            elif next_array[ni] == -1:
+            elif next_array[ni] == -1:   # 代表ni等于0
                 mi += 1
             else:
                 ni = next_array[ni]
@@ -58,7 +58,7 @@ class Solution:
                 pos += 1
             elif cn > 0:
                 cn = next_array[cn]
-            else:
+            else:                    # 即cn==0
                 next_array[pos] = 0
                 pos += 1
         return next_array
@@ -66,8 +66,10 @@ class Solution:
 
 
 
+
 if __name__ == '__main__':
-    print(Solution().getNextArray("abc1abc1"))
+    print("主串:google 子串：oo")
+    print("next数组：",Solution().getNextArray("google"))
     print(Solution().kmp1("google","oo"))
     print(Solution().kmp2("google","oo"))
 

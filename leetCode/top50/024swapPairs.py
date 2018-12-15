@@ -20,7 +20,7 @@ class Solution:
         pre = newHead
         while head and head.next:
             pre.next,pre.next.next,pre.next.next.next= pre.next.next,pre.next,pre.next.next.next
-            # p1,p2,p2.next = p2,p1,p2.next
+            # pre.next,pre.next.next= pre.next.next,pre.next
             pre = pre.next.next
 
             head = head.next
@@ -53,11 +53,12 @@ class Solution:
         while pre.next and pre.next.next:
             # a = pre.next
             # b = a.next
-            pre.next, pre.next.next.next,  pre.next.next = pre.next.next, pre.next, pre.next.next.next
+            # pre.next, pre.next.next.next,  pre.next.next = pre.next.next, pre.next, pre.next.next.next
+            pre.next, pre.next.next.next = pre.next.next, pre.next
             pre = pre.next
         return self.next
 
 if __name__ == '__main__':
     a = LinkList([1,2,3])
-    Solution().swapPairs4(a.get_head())
+    Solution().swapPairs(a.get_head())
 
