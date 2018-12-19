@@ -22,6 +22,11 @@
 
 class Solution(object):
     def climbStairs(self, n):
+        """
+        状态转移方程为dp[i] = dp[i-1]+dp[i-2]
+        :param n:
+        :return:
+        """
         a, b = 1, 1
         for i in range(n):
             a, b = b, a + b
